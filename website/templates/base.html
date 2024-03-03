@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>{% block title %}{% endblock%}</title> <!--Proměnná v šabloně pro název podstránky -->
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script>
+    function delete_flash(flash){
+        $(flash).parent().remove()
+    }
+</script>
+<body>
+    <header>
+        <img class="logo" src="../static/img/LOGO_2_0.png" alt="logo">
+        <nav id="nav-menu">
+            <ul class="nav_links">
+                <li class="li_nav"><a class="a_nav" href="/" id="domu">Domů</a></li>
+                <li class="li_nav"><a class="a_nav" href="/prihlaseni" id="prihlaseni">Přihlásit se</a></li>
+                <li class="li_nav"><a class="a_nav" href="/odhlaseni" id="odhlaseni">Odhlásit se</a></li>
+                <li class="li_nav"><a class="a_nav" href="/registrace" id="registrace">Zaregistrovat se</a></li>
+            </ul>
+        </nav>
+     <a href="http://kovacikprojekt.wz.cz" class="Ao_projektu"><button class="o_projektu">O projektu</button></a>
+    
+    </header>
+
+<main>
+   
+    {% with messages = get_flashed_messages(with_categories=true) %} <!-- získání zprávy z backendové části -->
+    {% if messages %}   <!-- Pokud byla získána nějaká zpráva následuje tahle číst kódu -->
+        {% for category, message in messages %} <!-- Cyklus pro zobrazení konkrétního text z zprávy -->
+        {% if category == 'chyba' %} <!-- Pokud se jedná o chybovou zprávu následuje tento kód -->
+        <div class="chyba" role="alert">
+            <p class="zpravaC">{{ message }}</p> <!-- Zobrezení textu zprávy -->
+        <button class="zavritC" onclick=delete_flash(this) data-dismiss="alert">&times;</button> <!-- JavaScriptová funkce pro zavření okna -->
+        </div>
+        {% else %} <!-- Pokud se jedná o úspěšnou zprávu zobrazí se tato část kódu -->
+        <div class="spravne" role="alert">
+            <p class="zpravaS">{{ message }}</p>
+            <button class="zavritS" onclick=delete_flash(this) data-dismiss="alert">&times;</button>
+            </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <div class="objekt"> <!-- Zde se nachází hlavní blok s obsahem-->
+        {% block content%}
+        {% endblock %}
+    </div> 
+    
+</main>
+
+<footer>
+
+    
+</footer>
+
+</body>
+</html>

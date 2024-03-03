@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Domů{% endblock%}
+{% block content %}
+    <form class="ukoly" action="" method="POST">
+        <h1>Úkoly</h1>
+        <table class="ukoly2">
+            <tr class="radek_ukoly2"><th class="nadpis_ukoly2">DATUM</th><th colspan="2" class="nadpis_ukoly2">Úkol</th></tr>
+        
+            {% for zobrazit in vsechnyUkoly %} <!-- Zobrazení všech dat uživatele pomocí cyklu for -->
+            <tr class="radek_ukoly2"><td class="bunka_ukoly2">{{ zobrazit.id }}<!-- Zobrazení data uložené --></td><td class="bunka_ukoly2">{{ zobrazit.to_dict()['Ukol'] }}<!-- Zobrazení konkrétního úkolu --></td><td class="bunka_ukoly2"><a class = "odstraneni_ukoly2" href="/odstraneni/{{ zobrazit.id }}">&#10003;</a></td></tr>
+            {% endfor %} <!-- Ukončení cyklu for -->
+        </table>
+        <br>
+        <table class="pridani">
+            <tr><td class="tlacitko"><input type="text" name="novy_ukol" id="novy_ukol" placeholder="Přidej Úkol"></td></tr>
+            <tr><td class="tlacitko"><input type="submit" name="" id="" value="Uložit úkol"></td></tr>
+        </table>
+    </form>
+
+{% endblock %}

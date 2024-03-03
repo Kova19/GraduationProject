@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500');
+
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /*background-color: rgb(21, 21, 29);*/
+    background-color: white;
+}
+
+.li_nav{
+    font-family: "Montserrat", sans-serif; /* Nastavení fontu písma */
+    font-weight: 500; /* Zvětšní tloušťky písma */
+    font-size: 16px; /* Zvetšení celého písma na 16px */
+    color: rgb(56, 87, 248); /* Změna barvy písma */
+    text-decoration: none; /* Zrušení podtržení odkazů */
+}
+
+.a_nav{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: rgb(56, 87, 248);
+    text-decoration: none;
+}
+.o_projektu{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+    background: none; /* Změna pozadí na průhledné */
+    display: block; /* Zobrazit tlačítko "O projektu" jako blok */
+    text-align: center; /* Zarovnat text v tlačítku na střed */
+    border: 2px solid rgb(249, 159, 9); /* Nastavení ohraničení tlačítka */
+    padding: 12px 20px; /* Odsatení od rohu */
+    color: rgb(249, 159, 9);
+    border-radius: 24px; /* Zaoblení ohraničení */
+    transition: 0.25s; /* Změna tlačítka po přiložení kurzoru */
+    cursor: pointer; /* Změna kurzoru na ukazovací typ */
+}
+.o_projektu:hover{
+    background: rgb(249, 159, 9);
+    color: white;
+}
+.Ao_projektu{
+    outline: none;  /* Odstranění podtrhnutí */
+    cursor: pointer; 
+    text-decoration: none; /* Odstranění veškerých dekorací textu */
+    background: none;
+}
+header{
+    display: flex; /* Flexibilní přizpůsobování navigačního menu */
+    background-color: white;
+    border-bottom: 2px solid rgb(249, 159, 9); /* Oddělení menu od zbytku stránky čárou */
+    justify-content: flex-end; /* Zarovnání celého obsahu ke stranám */
+    align-items: center; /* Prvky samy o sobě se zarovnají na středy */
+    padding: 13px 5%;
+}
+.logo{
+    width: 75px; /* Šířka loga */
+    cursor: pointer;
+    margin-right: auto; /* Automatické převedení loga na do leva */
+}
+.nav_links{
+    list-style: none; /* Odstranění jakéhokoliv stylu seznamu */
+}
+.nav_links li{
+    display: inline-block; /* Zobrazení odkazů v bloku */
+    padding: 0px 20px;
+}
+.nav_links li a{
+    transition: all 0.3s ease 0s; 
+}
+.nav_links li a:hover{
+    color: rgb(244, 116, 47);
+}
+
+/*Přihlášení + registrace*/
+.formular{
+    width: 32%; /* Šířka formuláře */
+    padding: 40px; /* Odsazení od menu */
+    position: relative; /* Pozice přizpůsobující se prvkům */
+    margin-right: auto; /* Srovnání okna na střed */
+    margin-left: auto; /* Srovnání okna na střčd */
+    margin-top: 7%; /* Odsazení od zhora  */
+    background: white;
+    text-align: center;
+    border: 3px solid rgb(56, 87, 248);
+    border-radius: 12px;
+
+}
+.formular h1{
+    color: rgb(244, 116, 47);
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.formular input[type = "email"],.formular input[type = "password"]{ /* Grafický návhr okének pro data */
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid rgb(56, 87, 248);
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: rgb(56, 87, 248);
+    border-radius: 24px;
+    transition: 0.25s;
+}
+.formular input[type = "email"]:focus,.formular input[type = "password"]:focus{ /* Grafický návrh okének, když se do nich zdává text */
+    width: 240px;
+    border-color: rgb(244, 116, 47);
+}
+.formular input[type = "submit"]{ /* Tlačítko potvrdit (přihlásit se ) */
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid rgb(244, 116, 47);
+    padding: 14px 40px;
+    outline: none;
+    color: rgb(244, 116, 47);
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+.formular input[type = "submit"]:hover{ /* Grafický návrh tlačítka při kurzoru na něm */
+    background: rgb(244, 116, 47);
+    color: white;
+}
+.reg_odkaz{
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+    background: none;
+    color: rgb(244, 116, 47);
+}
+.reg_odkaz:hover{
+    transition: .3s;
+    color: rgb(56, 87, 248);
+}
+.upozorneni{ /* Prvek pro informování uživatele, že heslo musí mít alespoň 6 znaků */
+    font-size: 12px;
+    font-style: italic;
+    color: red;
+    margin-top: -4%; /* Odsazení této zprávy nahoru */
+}
+/*Samotná úvodní strana*/
+.ukoly{
+    width: 40%;
+    padding: 40px;
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 5%;
+    /*margin-top: 5%;
+    margin-left: 30%;
+    margin-right: 30%;*/
+    background: white;
+    text-align: center;
+    border: 3px solid rgb(56, 87, 248);
+    /*box-shadow: 7px 7px 15px 3px rgba(56, 87, 248,.8);*/
+    border-radius: 12px;
+
+}
+.ukoly h1{
+    color: rgb(244, 116, 47);
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.ukoly input[type = "text"]{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid rgb(56, 87, 248);
+    padding: 14px 10px;
+    width: 150px;
+    outline: none;
+    color: rgb(56, 87, 248);
+    border-radius: 24px;
+    transition: 1s;
+}
+.ukoly input[type = "text"]:focus{
+    width: 350px;
+    border-color: rgb(244, 116, 47);
+}
+.ukoly input[type = "submit"]{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid rgb(244, 116, 47);
+    padding: 10px 30px;
+    outline: none;
+    color: rgb(244, 116, 47);
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+.ukoly input[type = "submit"]:hover{
+    background: rgb(244, 116, 47);
+    color: white;
+}
+
+.ukoly2{
+    color: rgb(244, 116, 47);
+    border: 2px solid rgb(56, 87, 248);
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    border-spacing: 0px;
+}
+.radek_ukoly2{
+    border: 1px solid rgb(56, 87, 248);
+    color: rgb(244, 116, 47);
+}
+.bunka_ukoly2{
+    border: 1px solid rgb(56, 87, 248);
+    color: rgb(244, 116, 47);
+    outline: none;
+}
+.nadpis_ukoly2{
+    border: 1px solid rgb(56, 87, 248);
+    color: rgb(244, 116, 47);
+    text-align: center;
+}
+.pridani{
+    margin-left: auto;
+    margin-right: auto;
+    border-spacing: 0px;
+}
+/*Desing pro vyskakovací okno s chybou*/
+.chyba{
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    border: 0;
+    background: none;
+    display: block;
+    text-align: center;
+    border: 2px solid rgb(249,42,53);
+    padding: 10px 30px;
+    outline: none;
+    color: rgb(249,42,53);
+    border-radius: 24px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 50px;
+}
+.zpravaC{
+    margin-left: auto;
+    margin-right: auto;
+}
+.zavritC{
+    border: 0;
+    background: none;
+    display: block;
+    text-align: center;
+    border: 2px solid rgb(249,42,53);
+    padding: 10px 15px;
+    outline: none;
+    color: rgb(249,42,53);
+    border-radius: 24px;
+    transition: 0.3s;
+    margin-left: auto;
+}
+.zavritC:hover{
+    background: rgb(249,42,53);
+    color: white;
+}
+.spravne{
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    border: 0;
+    background: none;
+    display: block;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 10px 30px;
+    outline: none;
+    color: #2ecc71;
+    border-radius: 24px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 50px;
+}
+.zpravaS{
+    margin-left: auto;
+    margin-right: auto;
+}
+.zavritS{
+    border: 0;
+    background: none;
+    display: block;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 10px 15px;
+    outline: none;
+    color: rgb(249,42,53);
+    border-radius: 24px;
+    transition: 0.3s;
+    margin-left: auto;
+    color: #2ecc71;
+}
+.zavritS:hover{
+    background: #2ecc71;
+    color: white;
+}
+.odstraneni_ukoly2{
+    border: 0;
+    background: none;
+    display: block;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 10px 10px;
+    outline: none;
+    color: #2ecc71;
+    border-radius: 24px;
+    transition: 0.3s;
+    margin-left: auto;
+    color: #2ecc71;
+    text-decoration: none;
+}
+.odstraneni_ukoly2:hover{
+    background: #2ecc71;
+    color: white;
+}

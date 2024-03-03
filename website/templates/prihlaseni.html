@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Prihlášení{% endblock%}
+{% block content %}
+<form class="formular" action="" method="POST">
+    <h1>Přihlásit se</h1>
+    <input type="email" name="e_mail" id="uzivatelske_jmeno" placeholder="E-mail">
+    <input type="password" name="heslo" id="heslo" placeholder="Heslo">
+    <input type="submit" name="" id="" value="Přihlásit se"> 
+        <a href="/obnoveni" class="reg_odkaz">Zapomenuté heslo?</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="/registrace" class="reg_odkaz">Zaregistrovat se</a>
+</form>
+
+{% endblock %}
