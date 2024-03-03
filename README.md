@@ -6,4 +6,4 @@ This project was created as part of my graduation work. Its aim was to demonstra
 
 ### Reminder
 
-All database secrets have been intentionally removed for data protection.
+All database secrets key and configuration have been intentionally removed for data protection.
